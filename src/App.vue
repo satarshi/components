@@ -1,18 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>{{ a }}</div>
+  <CInput v-model="a">
+    <template #prefix >sd</template>
+  </CInput>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script setup lang="ts">
+import { CInput } from "./components/Input"
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-});
+import { ref } from "vue"
+
+const a = ref('')
+
 </script>
 
 <style lang="scss">
@@ -23,5 +22,6 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  box-sizing: border-box;
 }
 </style>
